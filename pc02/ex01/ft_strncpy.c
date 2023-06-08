@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 19:10:53 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/07 14:49:42 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/06/08 11:11:08 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (src[i] != 0 && n > i)
