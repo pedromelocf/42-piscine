@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 14:59:41 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/06 15:02:39 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/05/30 14:35:29 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/06/04 23:40:20 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+//#include <stdio.h>
 
-int	ft_str_is_uppercase(char *str)
+void	ft_swap(int *a, int *b)
 {
-	int	i;
+	int	temp;
 
-	i = 0;
-	while (str[i] != 0)
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
-// int	main(void)
-// {
-// 	char a[] = "PEDRO";
-// 	char *str;
+/* int	main(void)
+{
+	int	*a;
+	int	*b;
+	int	value_a;
+	int	value_b;
 
-// 	str = a;
-// 	ft_str_is_uppercase(str);
-// 	printf("%d", ft_str_is_uppercase(str));
-// }
+	value_a = 42;
+	value_b = 24;
+	a = &value_a;
+	b = &value_b;
+	printf("%d\n", *a);
+	printf("%d\n", *b);
+	ft_swap(a, b);
+	printf("%d\n", *a);
+	printf("%d\n", *b);
+} */

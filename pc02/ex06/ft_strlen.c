@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 15:52:54 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/06 15:54:30 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/05/30 14:36:47 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/06/04 23:41:06 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+//#include <stdio.h>
 
-char	*ft_strlowcase(char *str)
+int	ft_strlen(char *str)
 {
-	int	i;
+	char	*string;
+	int		counter;
 
-	i = 0;
-	while (str[i] != 0)
+	counter = 0;
+	string = str;
+	while (*string != '\0')
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
-		i++;
+		string++;
+		counter++;
 	}
-	return (str);
+	return (counter);
 }
 
-// int	main(void)
-// {
-// 	char a[] = "ab12 D cD D de";
-// 	char *str;
-
-// 	str = a;
-// 	ft_strlowcase(str);
-// 	printf("%s", str);
-// }
+/* int	main(void)
+{
+	char *str;
+	str = "I need somebody! Help\n -Beatles";
+	ft_strlen(str);
+	printf("%d", counter); line 28.
+} */

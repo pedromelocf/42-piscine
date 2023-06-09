@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 15:03:12 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/06 15:17:27 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/05/30 14:35:47 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/06/05 11:04:03 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+//#include <stdio.h>
 
-int	ft_str_is_printable(char *str)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != 0)
-	{
-		if (str[i] >= 32 && str[i] <= 127)
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+	*div = (a / b);
+	*mod = (a % b);
 }
 
-// int	main(void)
-// {
-// 	char a[] = "\n";
-// 	char *str;
+/* int	main(void)
+{
+	int	a;
+	int	b;
+	int	store_a;
+	int	store_b;
+	int	*div;
+	int	*mod;
 
-// 	str = a;
-// 	ft_str_is_printable(str);
-// 	printf("%d", ft_str_is_printable(str));
-// }
+	a = 42;
+	b = 10;
+	store_a = 99;
+	store_b = 21;
+	div = &store_a;
+	mod = &store_b;
+	printf("%d\n", store_a);
+	printf("%d\n", store_b);
+	ft_div_mod(a, b, div, mod);
+	printf("%d\n", store_a);
+	printf("%d\n", store_b);
+} */

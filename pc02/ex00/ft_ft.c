@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 15:18:24 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/06 15:52:39 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/05/30 14:38:20 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/06/05 18:07:14 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+//#include <stdio.h>
 
-char	*ft_strupcase(char *str)
+void	ft_ft(int *nbr)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != 0)
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
-		i++;
-	}
-	return (str);
+	*nbr = 42;
 }
 
 // int	main(void)
 // {
-// 	char a[] = "abcD D de";
-// 	char *str;
+// 	int *nbr;
 
-// 	str = a;
-// 	ft_strupcase(str);
-// 	printf("%s", str);
+// 	ft_ft(nbr);
+// 	printf("%d", *nbr);
 // }
