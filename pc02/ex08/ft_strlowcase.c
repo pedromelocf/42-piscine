@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 14:35:10 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/04 23:40:04 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/06/06 15:52:54 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/06/06 15:54:30 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+// #include <stdio.h>
 
-void	ft_ultimate_ft(int *********nbr)
+char	*ft_strlowcase(char *str)
 {
-	*********nbr = 42;
+	int	i;
+
+	i = 0;
+	while (str[i] != 0)
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+		i++;
+	}
+	return (str);
 }
 
-/*int	main(void)
-{
-	int	a;
-	int	*nbr1;
-	int	**nbr2;
-	int	***nbr3;
-	int	****nbr4;
-	int	*****nbr5;
-	int	******nbr6;
-	int	*******nbr7;
-	int	********nbr;
+// int	main(void)
+// {
+// 	char a[] = "ab12 D cD D de";
+// 	char *str;
 
-	nbr1 = &a;
-	nbr2 = &nbr1;
-	nbr3 = &nbr2;
-	nbr4 = &nbr3;
-	nbr5 = &nbr4;
-	nbr6 = &nbr5;
-	nbr7 = &nbr6;
-	nbr = &nbr7;
-	ft_ultimate_ft(&nbr);
-	printf("%i\n", a);
-} */
+// 	str = a;
+// 	ft_strlowcase(str);
+// 	printf("%s", str);
+// }

@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 14:36:31 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/04 20:18:01 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/06/06 15:18:24 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/06/06 15:52:39 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+// #include <stdio.h>
 
-void	ft_putstr(char *str)
+char	*ft_strupcase(char *str)
 {
-	char	*ptr_str;
+	int	i;
 
-	ptr_str = str;
-	while (*ptr_str != '\0')
+	i = 0;
+	while (str[i] != 0)
 	{
-		write(1, ptr_str, 1);
-		ptr_str++;
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+		i++;
 	}
+	return (str);
 }
 
-/* int	main(void)
-{
-	char	*str;
+// int	main(void)
+// {
+// 	char a[] = "abcD D de";
+// 	char *str;
 
-	str = "Hello";
-	ft_putstr(str);
-	return (0);
-} */
+// 	str = a;
+// 	ft_strupcase(str);
+// 	printf("%s", str);
+// }

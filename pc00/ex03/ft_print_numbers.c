@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 14:36:47 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/04 23:41:06 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/05/27 12:07:19 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/05/29 18:48:21 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <unistd.h>
 
-int	ft_strlen(char *str)
+void	ft_print_numbers(void);
+
+void	ft_print_numbers(void)
 {
-	char	*string;
-	int		counter;
-
-	counter = 0;
-	string = str;
-	while (*string != '\0')
-	{
-		string++;
-		counter++;
-	}
-	return (counter);
+	write(1, "0123456789", 10);
 }
 
-/* int	main(void)
+/*int     main(void)
 {
-	char *str;
-	str = "I need somebody! Help\n -Beatles";
-	ft_strlen(str);
-	printf("%d", counter); line 28.
-} */
+    ft_print_numbers();
+}*/

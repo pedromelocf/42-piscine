@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_print_reserve_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 14:38:20 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/05 18:07:14 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/05/27 12:01:47 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/05/29 18:47:30 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <unistd.h>
 
-void	ft_ft(int *nbr)
+void	ft_print_reverse_alphabet(void);
+
+void	ft_print_reverse_alphabet(void)
 {
-	*nbr = 42;
+	write(1, "zyxwvutsrqponmlkjihgfedcba", 26);
 }
 
-// int	main(void)
-// {
-// 	int *nbr;
-
-// 	ft_ft(nbr);
-// 	printf("%d", *nbr);
-// }
+/*int     main(void)
+{
+    ft_print_reverse_alphabet();
+} */

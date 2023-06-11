@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 14:35:10 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/04 23:40:04 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/05/27 12:16:48 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/05/29 18:48:32 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
+#include <unistd.h>
 
-void	ft_ultimate_ft(int *********nbr)
+void	ft_is_negative(int n);
+
+void	ft_is_negative(int n)
 {
-	*********nbr = 42;
+	if (n < 0)
+	{
+		write(1, "N", 1);
+	}
+	else
+	{
+		write(1, "P", 1);
+	}
 }
 
-/*int	main(void)
+/*int main	(void)
 {
-	int	a;
-	int	*nbr1;
-	int	**nbr2;
-	int	***nbr3;
-	int	****nbr4;
-	int	*****nbr5;
-	int	******nbr6;
-	int	*******nbr7;
-	int	********nbr;
+    int i;
 
-	nbr1 = &a;
-	nbr2 = &nbr1;
-	nbr3 = &nbr2;
-	nbr4 = &nbr3;
-	nbr5 = &nbr4;
-	nbr6 = &nbr5;
-	nbr7 = &nbr6;
-	nbr = &nbr7;
-	ft_ultimate_ft(&nbr);
-	printf("%i\n", a);
-} */
+    i = -100;
+    ft_is_negative(i);
+}*/

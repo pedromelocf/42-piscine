@@ -1,36 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 14:36:47 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/04 23:41:06 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/05/31 15:19:09 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/05/31 19:39:03 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <unistd.h>
 
-int	ft_strlen(char *str)
+void	ft_putchar(char c)
 {
-	char	*string;
-	int		counter;
-
-	counter = 0;
-	string = str;
-	while (*string != '\0')
-	{
-		string++;
-		counter++;
-	}
-	return (counter);
+	write(1, &c, 1);
 }
 
-/* int	main(void)
+void	ft_putnbr(int nb)
 {
-	char *str;
-	str = "I need somebody! Help\n -Beatles";
-	ft_strlen(str);
-	printf("%d", counter); line 28.
-} */
+	int	x;
+	int	y;
+
+	if (nb < 0)
+		ft_putchar('-');
+	while (nb >= 100)
+	{
+		y = ((nb / 10) + '0');
+		x = ((nb % 10) + '0');
+		nb = (nb / 10);
+		y++;
+		x++;
+	}
+	if (nb >= 0 && nb < 100)
+	{
+		y = ((nb / 10) + '0');
+		x = ((nb % 10) + '0');
+		ft_putchar(y);
+		ft_putchar(x);
+	}
+}
+
+int	main(void)
+{
+	ft_putnbr(100);
+}
