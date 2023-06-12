@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main() {
-   const char haystack[200] = "Today was a good day!";
+   const char haystack[200] = "Today was a good day! 434";
    const char needle[200] = "good day!";
    char *ret;
 
