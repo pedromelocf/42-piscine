@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 15:54:41 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/07 18:13:48 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/06/12 19:30:17 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,32 @@
 char	*ft_strcapitalize(char *str)
 {
 	int	i;
-	int	c;
 
-	i = 0;
-	while (str[i] != 0)
+	i = 1;
+	if (str[0] > 'a' && str[0] < 'z')
+		str[0] -= 32;
+	while (str[i] != '\0')
 	{
-		c = 0;
-		while ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A'
-				&& str[i] <= 'Z') || (str[i] >= '0' && str[i] <= '9'))
+		if (!((str[i - 1] >= 'a' && str[i - 1] <= 'z') || (str[i - 1] >= 'A'
+					&& str[i - 1] <= 'Z') || (str[i - 1] >= '0' && str[i
+						- 1] <= '9')))
 		{
-			if ((c == 0) && str[i] >= 'a' && str[i] <= 'z')
-			{
+			if (str[i] >= 'a' && str[i] <= 'z')
 				str[i] -= 32;
-				c += 1;
-			}
-			else if (str[i] >= 'A' && str[i] <= 'Z')
+		}
+		else
+		{
+			if (str[i] >= 'A' && str[i] <= 'Z')
 				str[i] += 32;
-			else if (str[i] >= '0' && str[i] <= '9')
-				c += 1;
-			i++;
 		}
 		i++;
 	}
-	i++;
 	return (str);
 }
 
 // int	main(void)
 // {
-// 	char a[] = "sAlut, cOmment tu vas ? 42mots quarante-deux; cinquante+et+un";
+// 	char a[] = "42Salut, Comment tu vAs ? 42Mots {quarante-deux; ";
 // 	char *str;
 
 // 	str = a;

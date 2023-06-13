@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 18:41:11 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/11 11:54:48 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/06/13 00:57:10 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strstr(char *str, char *to_find)
 
 // int	main(void)
 // {
-// 	char	a[] = "Today was a good day!42";
+// 	char	a[] = "Today was a good day!4434";
 // 	char	b[] = "good day!";
 // 	char	*str;
 // 	char	*to_find;
@@ -45,6 +45,6 @@ char	*ft_strstr(char *str, char *to_find)
 // 	str = a;
 // 	to_find = b;
 // 	ft_strstr(str, to_find);
-// 	printf("%s", ft_strstr(str, to_find));
-// 	printf("%s", strstr(str, to_find));
+// 	printf("Original output(função original): %s\n", strstr(str, to_find));
+// 	printf("My function ouput(função criada): %s\n", ft_strstr(str, to_find));
 // }
