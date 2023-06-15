@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 11:31:21 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/14 20:00:18 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/06/13 10:40:48 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/06/14 22:13:58 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
-{
-	int	i;
-	int	j;
+#include <unistd.h>
 
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (src[j])
-	{
-		dest[j + i] = src[j];
-		j++;
-	}
-	dest[j + i] = '\0';
-	return (dest);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }
 
-// #include <stdio.h>
+int	main(int argc, char **argv)
+{
+	int	c;
 
-// int	main(void)
-// {
-// 	char	dest[20] = "12345";
-// 	char	src[] = "67890";
-
-// 	ft_strcat(dest, src);
-// 	printf("Resultado: %s\n", dest);
-// 	return (0);
-// }
+	c = 0;
+	while (argv[0][c] && argc != '\0')
+	{
+		ft_putchar(argv[0][c]);
+		c++;
+	}
+	ft_putchar('\n');
+	return (0);
+}

@@ -6,13 +6,11 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 15:11:35 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/10 15:11:37 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/06/14 12:49:56 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+// #include <stdio.h>
 
 int	ft_atoi(char *ptrb)
 {
@@ -23,30 +21,29 @@ int	ft_atoi(char *ptrb)
 	c = 0;
 	i = 0;
 	sign = 1;
-	if (ptrb[0] == '-')
+	while (ptrb[i] == ' ' || (ptrb[i] >= '\b' && ptrb[i] <= '\r'))
+		i++;
+	while (ptrb[i] == '-' || ptrb[i] == '+')
 	{
-		sign = -1;
+		if (ptrb[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	while (ptrb[i] != '\0')
+	while (ptrb[i] >= '0' && ptrb[i] <= '9')
 	{
-		if ((ptrb[i] >= '0') && (ptrb[i] <= '9'))
-			c = c * 10 + ptrb[i] - '0';
-		else
-			return sign * c;
+		c = c * 10 + ptrb[i] - '0';
 		i++;
 	}
-	return sign * c;
+	return (c * sign);
 }
 
-int	main(void)
-{
-	char b[] = "2147483647";
-	char *ptrb;
+// int	main(void)
+// {
+// 	char b[] = " ---+--+1234ab567";
+// 	char *ptrb;
 
-	ptrb = b;
+// 	ptrb = b;
 
-	printf("Atoi original: %d\n", atoi(ptrb));
-	int val = ft_atoi(ptrb);
-	printf("Meu atoi: %d", val);
-}
+// 	int val = ft_atoi(ptrb);
+// 	printf("Meu atoi: %d", val);
+// }

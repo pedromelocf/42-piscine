@@ -6,38 +6,38 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 11:28:20 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/13 01:41:17 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/06/14 18:52:30 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <string.h>
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
+	int				j;
 
 	i = 0;
-	while ((s1[i] != '\0' && s2[i] != '\0') && (i < n))
+	j = 0;
+	while ((s1[i] != '\0' && s2[i] != '\0') && (i < n) && !j)
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		j = ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	return (0);
+	if ((i < n) && s1[i] != s2[i] && !j)
+		j = ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return (j);
 }
 
-int	main(void)
-{
-	char a[] = "Bergesone";
-	char b[] = "Bergz";
-	char *s1;
-	char *s2;
-	unsigned int n;
+// #include <stdio.h>
 
-	s1 = a;
-	s2 = b;
-	n = 5;
-	printf("Esse é o valor da função original:%d\n", strncmp(s1, s2, n));
-	printf("Esse é o valor da função ft_strncmp:%d\n", ft_strncmp(s1, s2, n));
-}
+// int	main(void)
+// {
+// 	char str1[] = "ABC";
+// 	char str2[] = "ABD";
+// 	int result;
+// 	int limit;
+
+// 	limit = 2;
+// 	result = ft_strncmp(str1, str2, limit);
+// 	printf("Esse é o valor ft_strcmp:%d\n", ft_strncmp(str1, str2, limit));
+// 	printf("Esse é o valor ft_strcmp:%d\n", ft_strncmp(str1, str2, 3));
+// }

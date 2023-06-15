@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 16:53:38 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/14 18:53:19 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/06/13 05:06:55 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/06/14 08:17:44 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
 
 	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while ((src[j]) && (j < nb))
+	while (str[i] != '\0')
 	{
-		dest[j + i] = src[j];
-		j++;
+		write(1, &str[i], 1);
+		i++;
 	}
-	dest[j + i] = '\0';
-	return (dest);
 }
 
-// #include <stdio.h>
-// int	main (void)
+// int	main(void)
 // {
-// 	char a[] = "12345";
-// 	char b[] = "678910111213";
-// 	int limit;
-
-// 	limit = 1;
-// 	printf("%s", ft_strncat(a, b, limit));
+// 	char test[] = "Hello";
+// 	ft_putstr(test);
 // 	return (0);
 // }

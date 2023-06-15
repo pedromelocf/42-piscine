@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 11:31:21 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/14 20:00:18 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/06/13 05:06:52 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/06/13 21:05:29 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
-{
-	int	i;
-	int	j;
+//#include <stdio.h>
 
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (src[j])
+int	ft_strlen(char *str)
+{
+	char	*string;
+	int		counter;
+
+	counter = 0;
+	string = str;
+	while (*string != '\0')
 	{
-		dest[j + i] = src[j];
-		j++;
+		string++;
+		counter++;
 	}
-	dest[j + i] = '\0';
-	return (dest);
+	return (counter);
 }
 
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	dest[20] = "12345";
-// 	char	src[] = "67890";
-
-// 	ft_strcat(dest, src);
-// 	printf("Resultado: %s\n", dest);
-// 	return (0);
-// }
+/* int	main(void)
+{
+	char *str;
+	str = "123456789";
+	ft_strlen(str);
+	printf("%d", counter); //line 27.
+} */

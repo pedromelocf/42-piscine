@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 16:53:38 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/06/14 18:53:19 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/06/13 10:40:55 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/06/14 22:13:40 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
-{
-	unsigned int	i;
-	unsigned int	j;
+#include <unistd.h>
 
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while ((src[j]) && (j < nb))
-	{
-		dest[j + i] = src[j];
-		j++;
-	}
-	dest[j + i] = '\0';
-	return (dest);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }
 
-// #include <stdio.h>
-// int	main (void)
-// {
-// 	char a[] = "12345";
-// 	char b[] = "678910111213";
-// 	int limit;
+int	main(int argc, char **argv)
+{
+	int	counter;
+	int	i;
 
-// 	limit = 1;
-// 	printf("%s", ft_strncat(a, b, limit));
-// 	return (0);
-// }
+	i = 1;
+	while (argv[i])
+		i++;
+	while (argc > 1)
+	{
+		counter = 0;
+		while (argv[i - 1][counter])
+		{
+			ft_putchar(argv[i - 1][counter]);
+			counter++;
+		}
+		ft_putchar('\n');
+		i--;
+		argc--;
+	}
+	return (0);
+}
